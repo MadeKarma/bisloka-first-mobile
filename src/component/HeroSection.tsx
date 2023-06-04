@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section>
       <div className="absolute bg-[#3BC5E9] h-[780.36px] hidden right-0 -z-10 md:block md:w-[340px] 2xl:w-2/5"></div>
-      <div className="content-center grid h-screen md:bs-container">
+      <div className="content-center grid pt-[180px] md:h-screen md:bs-container">
         <div className="relative md:grid md:grid-cols-5">
           <div className="absolute right-0 -top-[115px] -z-10 md:hidden">
             <DotsBlue />

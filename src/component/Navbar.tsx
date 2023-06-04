@@ -4,6 +4,29 @@ import Bisloka from "../assets/img/iconbisloka.png";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
+  interface INavigation {
+    id: number;
+    link: string;
+  }
+  const navigations: INavigation[] = [
+    {
+      id: 1,
+      link: "Booking",
+    },
+    {
+      id: 2,
+      link: "List Bus",
+    },
+    {
+      id: 3,
+      link: "Blog",
+    },
+    {
+      id: 4,
+      link: "Tentang Kami",
+    },
+  ];
+
   return (
     <header
       className={`fixed ${
@@ -46,10 +69,13 @@ export default function Navbar() {
         >
           <div className="bs-container flex flex-col font-semibold md:flex-row md:items-center md:justify-between md:mx-0 md:pl-8 lg:max-w-none ">
             <nav className="flex flex-col h-full text-[14px] text-black md:flex-row md:gap-8 [&>*]:border [&>*]:border-transparent [&>*]:duration-300 [&>*]:rounded-xl hover:[&>*]:border hover:[&>*]:border-white md:[&>*]:pl-0">
-              <p className="pl-2 py-4">Booking</p>
-              <p className="pl-2 py-4">List Bus</p>
-              <p className="pl-2 py-4">Blog</p>
-              <p className="pl-2 py-4">Tentang Kami</p>
+              {navigations.map((navigation) => {
+                return (
+                  <p className="pl-2 py-4" key={navigation.id}>
+                    {navigation.link}
+                  </p>
+                );
+              })}
             </nav>
             <div className="flex flex-col gap-4 mt-10 md:flex-row md:mt-0">
               <button className="bg-white rounded-lg py-3 md:bg-transparent md:py-2 md:px-6">
