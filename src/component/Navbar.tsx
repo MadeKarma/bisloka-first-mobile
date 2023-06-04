@@ -6,59 +6,59 @@ export default function Navbar() {
   const [toggle, setToggle] = useState(false);
   return (
     <header
-      className={`fixed w-full ${
+      className={`fixed ${
         toggle ? "h-screen" : "h-max"
-      } md:bg-transparent overflow-hidden z-50`}
+      } overflow-hidden w-full z-50 md:bg-transparent`}
     >
       <div
         className={`${
           toggle ? "bg-blue-300" : "bg-transparent"
-        } duration-500 flex flex-col md:flex-row md:items-center md:bg-transparent md:bs-container`}
+        } duration-500 flex flex-col md:bg-transparent md:bs-container md:flex-row md:items-center`}
       >
         <div className="bg-white md:bg-transparent">
-          <div className="bs-container md:mx-0 lg:max-w-none flex justify-between py-4">
+          <div className="bs-container flex justify-between py-4 lg:max-w-none md:mx-0">
             <div className="flex gap-3 h-10 items-center">
               <img className="h-full" src={Bisloka} alt="" />
               <h1
-                className={`${
+                className={`duration-500 font-bold ${
                   toggle ? "opacity-100" : "opacity-0"
-                } transition-opacity duration-500 font-bold text-3xl md:hidden`}
+                } text-3xl transition-opacity md:hidden`}
               >
                 Bisloka
               </h1>
             </div>
             <button
-              className={`cursor-pointer relative h-8 ${
+              className={`cursor-pointer relative h-8 w-8 ${
                 toggle
-                  ? "[&>div::before]:translate-y-0 [&>div::before]:-rotate-45 [&>div::after]:translate-y-0 [&>div::after]:rotate-45 [&>div]:bg-transparent"
+                  ? "[&>div]:bg-transparent [&>div::before]:-rotate-45 [&>div::before]:translate-y-0 [&>div::after]:rotate-45 [&>div::after]:translate-y-0"
                   : ""
-              } w-8 md:hidden`}
+              } md:hidden`}
               onClick={() => setToggle(!toggle)}
             >
-              <div className="absolute bg-black duration-500 h-1 -mt-0.5 rounded top-4 transition-all w-8 before:absolute before:bg-black before:duration-500 before:content-[''] before:h-1 before:rounded before:transition-all before:-translate-x-4 before:-translate-y-3 before:w-8 after:absolute after:bg-black after:duration-500 after:content-[''] after:h-1 after:w-8 after:rounded after:transition-all after:-translate-x-4 after:translate-y-3"></div>
+              <div className="absolute bg-black duration-500 h-1 -mt-0.5 rounded top-4 transition-all w-8 before:absolute before:bg-black before:content-[''] before:duration-500 before:h-1 before:rounded before:transition-all before:-translate-x-4 before:-translate-y-3 before:w-8 after:absolute after:bg-black after:content-[''] after:duration-500 after:h-1 after:w-8 after:rounded after:transition-all after:-translate-x-4 after:translate-y-3"></div>
             </button>
           </div>
         </div>
         <div
-          className={`bg-blue-300 md:bg-transparent w-full h-screen md:h-full duration-500 absolute mt-[72px] md:mt-0 ${
+          className={` absolute bg-blue-300 duration-500 h-screen ${
             toggle ? "left-0" : "left-[200%]"
-          } pt-6 md:w-full md:pt-0 md:static`}
+          } mt-[72px] pt-6 w-full md:bg-transparent md:h-full md:mt-0 md:pt-0 md:static md:w-full`}
         >
-          <div className="bs-container font-semibold md:mx-0 lg:max-w-none md:pl-8 flex flex-col md:flex-row md:items-center md:justify-between">
-            <nav className="flex flex-col md:gap-8 md:flex-row h-full [&>*]:border [&>*]:border-transparent  [&>*]:rounded-xl md:[&>*]:pl-0 hover:[&>*]:border hover:[&>*]:border-white [&>*]:duration-300  text-black text-[14px] ">
+          <div className="bs-container flex flex-col font-semibold md:flex-row md:items-center md:justify-between md:mx-0 md:pl-8 lg:max-w-none ">
+            <nav className="flex flex-col h-full text-[14px] text-black md:flex-row md:gap-8 [&>*]:border [&>*]:border-transparent [&>*]:duration-300 [&>*]:rounded-xl hover:[&>*]:border hover:[&>*]:border-white md:[&>*]:pl-0">
               <p className="pl-2 py-4">Booking</p>
               <p className="pl-2 py-4">List Bus</p>
               <p className="pl-2 py-4">Blog</p>
               <p className="pl-2 py-4">Tentang Kami</p>
             </nav>
-            <div className="flex flex-col md:flex-row gap-4 mt-10 md:mt-0">
-              <button className="bg-white md:bg-transparent rounded-xl py-3 md:py-2 md:px-6">
-                <span className="font-semibold text-[14px] text-black">
+            <div className="flex flex-col gap-4 mt-10 md:flex-row md:mt-0">
+              <button className="bg-white rounded-lg py-3 md:bg-transparent md:py-2 md:px-6">
+                <span className="font-semibold text-[14px] text-black md:text-white">
                   Sign In
                 </span>
               </button>
-              <button className="border-2 border-primary md:border-white rounded-xl py-3 md:py-2 md:px-6">
-                <span className="font-semibold text-[14px] text-black">
+              <button className="border-2 border-primary rounded-lg py-3 md:border-white md:py-2 md:px-6">
+                <span className="font-semibold text-[14px] text-black md:text-white">
                   Sign In
                 </span>
               </button>
