@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section>
       <div className="absolute bg-[#3BC5E9] h-[780.36px] hidden right-0 -z-10 md:block md:w-[340px] 2xl:w-2/5"></div>
-      <div className="content-center grid pt-[180px] md:h-screen md:bs-container">
+      <div className="content-center grid pt-[180px] md:bs-container md:pb-[220px] md:pt-[230px] ">
         <div className="relative md:grid md:grid-cols-5">
           <div className="absolute right-0 -top-[115px] -z-10 md:hidden">
             <DotsBlue />
@@ -15,7 +15,7 @@ export default function HeroSection() {
             <DotsBlue />
           </div>
           <div className="bs-container col-span-3 mb-12 self-center md:mb-0 md:mx-0 lg:max-w-none">
-            <h1 className="font-extrabold leading-none mb-6 text-[#333] text-3xl w-3/4 md:text-[52px]">
+            <h1 className="bg-[rgba(255,255,255,0.7)] font-extrabold leading-none mb-6 text-[#333] text-3xl w-3/4 md:bg-transparent md:text-[52px]">
               Cara Mudah Sewa Bus Pariwisata
             </h1>
             <p className="leading-8 text-[#4F4F4F] text-[14px] w-3/4">
@@ -41,7 +41,7 @@ export default function HeroSection() {
             >
               <path
                 d="M0 320l60-26.7C120 267 240 213 360 176s240-59 360-48 240 53 360 37.3c120-16.3 240-90.3 300-128L1440 0v320H0z"
-                fill="#09f"
+                fill="#3BC5E9"
               ></path>
             </svg>
           </div>

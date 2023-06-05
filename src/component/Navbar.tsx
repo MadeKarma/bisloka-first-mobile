@@ -4,10 +4,17 @@ import Bisloka from "../assets/img/iconbisloka.png";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
+  const [navBg, setNavBg] = useState(false);
+
+  window.addEventListener("scroll", () => {
+    window.scrollY ? setNavBg(true) : setNavBg(false);
+  });
+
   interface INavigation {
     id: number;
     link: string;
   }
+
   const navigations: INavigation[] = [
     {
       id: 1,
@@ -29,9 +36,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed ${
+      className={`${navBg ? "bg-white shadow-lg" : ""} duration-300 fixed ${
         toggle ? "h-screen" : "h-max"
-      } overflow-hidden w-full z-50 md:bg-transparent`}
+      } overflow-hidden w-full z-50`}
     >
       <div
         className={`${
@@ -79,12 +86,24 @@ export default function Navbar() {
             </nav>
             <div className="flex flex-col gap-4 mt-10 md:flex-row md:mt-0">
               <button className="bg-white rounded-lg py-3 md:bg-transparent md:py-2 md:px-6">
-                <span className="font-semibold text-[14px] text-black md:text-white">
+                <span
+                  className={`font-bold text-[14px] text-black ${
+                    navBg ? "md:text-primary" : "md:text-white"
+                  }`}
+                >
                   Sign In
                 </span>
               </button>
-              <button className="border-2 border-primary rounded-lg py-3 md:border-white md:py-2 md:px-6">
-                <span className="font-semibold text-[14px] text-black md:text-white">
+              <button
+                className={`border-2 border-primary rounded-lg py-3 ${
+                  navBg ? "md:border-primary" : "md:border-white"
+                } md:py-2 md:px-6`}
+              >
+                <span
+                  className={`font-bold text-[14px] text-black ${
+                    navBg ? "md:text-primary" : "md:text-white"
+                  }`}
+                >
                   Sign In
                 </span>
               </button>
