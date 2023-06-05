@@ -28,7 +28,7 @@ export default function DirectSearch() {
   ];
 
   return (
-    <section className="relative md:bg-white">
+    <section className="relative">
       <div className="absolute -scale-[1] -top-0.5 w-full -z-10">
         <svg
           className="md:hidden"
@@ -41,14 +41,14 @@ export default function DirectSearch() {
           ></path>
         </svg>
       </div>
-      <div className="bs-container py-12">
-        <div className="py-8">
+      <div className="bg-white bs-container py-12 rounded-[10px] shadow-lg md:pb-[45px] md:pt-[60px] md:px-[76px]">
+        <div className="py-8 md:py-0 md:pb-8">
           <h1 className="font-extrabold text-[#333] text-3xl">
             <span className="font-normal text-xl block">Hey kamu</span>Mau
             liburan kemana ?
           </h1>
         </div>
-        <div className="grid grid-rows-3 [&>*:nth-child(odd)]:border-y-2 [&>*:nth-child(odd)]:border-[#888] md:[&>*:nth-child(odd)]:border-none">
+        <div className="grid md:border-y-2 md:py-3 md:grid-cols-3 [&>*:nth-child(odd)]:border-y-2 [&>*:nth-child(odd)]:border-[#888] md:[&>*:nth-child(odd)]:border-none">
           {directs.map((direct) => {
             return (
               <div className="py-4">
@@ -60,7 +60,9 @@ export default function DirectSearch() {
                     <img src={direct.img} alt="" />
                     <h3 className="text-[18px]">{direct.content}</h3>
                   </div>
-                  <Icon icon={chevronDown} size={20} />
+                  <div className="block md:hidden">
+                    <Icon style={{}} icon={chevronDown} size={20} />
+                  </div>
                 </div>
               </div>
             );
